@@ -2,8 +2,8 @@
 name: "Pillars of Thought"
 title: "Pillars of Thought"
 description: "Four main pillars: Theology, Philosophy, Policy, and History"
-url: "https://rowern711.github.io"
-baseurl: "/pillars"
+url: ""
+baseurl: ""
 author: "Pillars"
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title/

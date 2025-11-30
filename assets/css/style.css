@@ -81,7 +81,7 @@ a:hover {
 }
 
 .hero {
-  background: url('../images/pillar-header.svg') center/cover no-repeat;
+  background: url('/assets/images/pillar-header.svg') center/cover no-repeat;
   border: 3px solid var(--ink);
   box-shadow: 6px 6px 0 var(--shadow);
   margin: 1rem 0 2rem;
