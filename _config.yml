@@ -1,0 +1,42 @@
+# Jekyll configuration for GitHub Pages
+name: "Pillars of Thought"
+title: "Pillars of Thought"
+description: "Four main pillars: Theology, Philosophy, Policy, and History"
+url: "https://rowern711.github.io"
+baseurl: "/pillars"
+author: "Pillars"
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+collections:
+  posts:
+    output: true
+
+# Use GitHub Pages-compatible plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+paginate: 5
+paginate_path: "/page:num/"
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Pillars"
+      pillar: "General"
+      image: "/assets/images/pillar-header.svg"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+# Pillar categories
+pillars:
+  - Theology
+  - Philosophy
+  - Policy
+  - History
