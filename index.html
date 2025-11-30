@@ -1,0 +1,56 @@
+---
+layout: default
+permalink: /
+---
+<div class="hero">
+  <div class="hero-overlay">
+    <h2>Welcome to Pillars of Thought</h2>
+    <p>A Philosophy Bro-inspired notebook for theology, philosophy, policy, and history.</p>
+  </div>
+</div>
+
+<section>
+  <h2>Latest Posts</h2>
+  <div class="card-grid">
+    {% for post in paginator.posts %}
+      <article class="post-card">
+        <span class="tag">{{ post.pillar }}</span>
+        <small>{{ post.date | date: '%B %d, %Y' }}</small>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Pillars</h2>
+  <div class="card-grid">
+    {% assign active_pillars = "" | split: "" %}
+    {% for pillar in site.pillars %}
+      {% assign matches = site.posts | where: "pillar", pillar %}
+      {% unless matches == empty %}
+        {% assign active_pillars = active_pillars | concat: [pillar] %}
+      {% endunless %}
+    {% endfor %}
+
+    {% for pillar in active_pillars %}
+      <article class="post-card">
+        <span class="tag">Pillar</span>
+        <h3><a href="{{ '/pillars/' | append: pillar | downcase | append: '/' | relative_url }}">{{ pillar }}</a></h3>
+        <p>Browse every essay filed under the {{ pillar | downcase }} pillar.</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if paginator.total_pages > 1 %}
+<div class="nav" aria-label="Pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">Newer</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Older</a>
+  {% endif %}
+</div>
+{% endif %}
