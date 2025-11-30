@@ -5,22 +5,13 @@
 </head>
 <body>
   <div class="site-wrap">
-    {% assign active_pillars = "" | split: "" %}
-    {% for pillar in site.pillars %}
-      {% assign matches = site.posts | where: "pillar", pillar %}
-      {% unless matches == empty %}
-        {% assign active_pillars = active_pillars | concat: [pillar] %}
-      {% endunless %}
-    {% endfor %}
-
     <header class="header">
-      <p class="site-subtitle">Four Pillars: Theology • Philosophy • Policy • History</p>
+      <!-- <p class="site-subtitle">Four Pillars: Theology • Philosophy • Policy • History</p> -->
       <h1 class="site-title"><a href="{{ '/' | relative_url }}">Pillars of Thought</a></h1>
       <nav class="nav">
         <a href="{{ '/' | relative_url }}">Home</a>
-        {% for pillar in active_pillars %}
-          {% assign slug = pillar | downcase %}
-          <a href="{{ '/' | append: slug | append: '/' | relative_url }}">{{ pillar }}</a>
+        {% for pillar in site.pillars %}
+          <a href="{{ '/pillars/' | append: pillar | downcase | append: '/' | relative_url }}">{{ pillar }}</a>
         {% endfor %}
         <a href="{{ '/archives/' | relative_url }}">Archives</a>
       </nav>

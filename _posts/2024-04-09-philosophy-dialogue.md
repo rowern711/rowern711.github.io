@@ -1,8 +1,6 @@
 ---
 title: Stoic Sidewalk Talk
 pillar: Philosophy
-categories: [philosophy]
-tags: [Philosophy]
 ---
 Grab a hoodie, queue up some lo-fi, and pace through a street-level take on virtue ethics. This entry keeps the **philosophy pillar** playful—riffing on Epictetus, subway delays, and the moral weight of sharing your last slice.
 
