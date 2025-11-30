@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div class="site-wrap">
+    {% assign active_pillars = "" | split: "" %}
+    {% for pillar in site.pillars %}
+      {% assign matches = site.posts | where: "pillar", pillar %}
+      {% unless matches == empty %}
+        {% assign active_pillars = active_pillars | concat: [pillar] %}
+      {% endunless %}
+    {% endfor %}
+
+    <header class="header">
+      <p class="site-subtitle">Four Pillars: Theology • Philosophy • Policy • History</p>
+      <h1 class="site-title"><a href="{{ '/' | absolute_url }}">Pillars of Thought</a></h1>
+      <nav class="nav">
+        <a href="{{ '/' | absolute_url }}">Home</a>
+        {% for pillar in active_pillars %}
+          {% assign slug = pillar | slugify %}
+          <a href="{{ '/' | append: slug | append: '/' | absolute_url }}">{{ pillar }}</a>
+        {% endfor %}
+        <a href="{{ '/archives/' | absolute_url }}">Archives</a>
+      </nav>
+    </header>
+
+    {{ content }}
+
+    <footer class="footer">
+      <p>Built for GitHub Pages with Jekyll • {{ site.title }}</p>
+    </footer>
+  </div>
+</body>
+</html>

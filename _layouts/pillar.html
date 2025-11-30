@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="hero">
+  <div class="hero-overlay">
+    <h2>{{ page.title }}</h2>
+    <p>Exploring the {{ page.title | downcase }} pillar with hand-picked essays.</p>
+  </div>
+</div>
+<div class="card-grid">
+  {% assign filtered = site.posts | where: 'pillar', page.pillar %}
+  {% for post in filtered %}
+    <article class="post-card">
+      <span class="tag">{{ post.pillar }}</span>
+      <small>{{ post.date | date: '%B %d, %Y' }}</small>
+      <h3><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </article>
+  {% endfor %}
+  {% if filtered == empty %}
+    <article class="post-card">
+      <h3>More {{ page.title | downcase }} entries coming soon.</h3>
+      <p>Drop a new post in the `_posts` folder with `pillar: {{ page.title }}` to populate this page.</p>
+    </article>
+  {% endif %}
+</div>
