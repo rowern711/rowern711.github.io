@@ -11,9 +11,9 @@
       <nav class="nav">
         <a href="{{ '/' | relative_url }}">Home</a>
         {% for pillar in site.pillars %}
-          <a href="{{ '/pillars/' | append: pillar | downcase | append: '/' | relative_url }}">{{ pillar }}</a>
+          <a href="{{ 'pillars/' | append: pillar | downcase | append: '/' | relative_url }}">{{ pillar }}</a>
         {% endfor %}
-        <a href="{{ '/archives/' | relative_url }}">Archives</a>
+        <a href="{{ 'archives/' | relative_url }}">Archives</a>
       </nav>
     </header>
 
