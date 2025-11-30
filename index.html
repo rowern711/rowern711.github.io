@@ -2,12 +2,12 @@
 layout: default
 permalink: /
 ---
-<div class="hero">
+<!-- <div class="hero">
   <div class="hero-overlay">
     <h2>Welcome to Pillars of Thought</h2>
     <p>A Philosophy Bro-inspired notebook for theology, philosophy, policy, and history.</p>
   </div>
-</div>
+</div> -->
 
 <section>
   <h2>Latest Posts</h2>
@@ -26,15 +26,7 @@ permalink: /
 <section>
   <h2>Pillars</h2>
   <div class="card-grid">
-    {% assign active_pillars = "" | split: "" %}
     {% for pillar in site.pillars %}
-      {% assign matches = site.posts | where: "pillar", pillar %}
-      {% unless matches == empty %}
-        {% assign active_pillars = active_pillars | concat: [pillar] %}
-      {% endunless %}
-    {% endfor %}
-
-    {% for pillar in active_pillars %}
       <article class="post-card">
         <span class="tag">Pillar</span>
         <h3><a href="{{ '/pillars/' | append: pillar | downcase | append: '/' | relative_url }}">{{ pillar }}</a></h3>

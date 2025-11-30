@@ -1,8 +1,6 @@
 ---
 title: Litany at Dawn
 pillar: Theology
-categories: [theology]
-tags: [Theology]
 ---
 In this meditation on the **theology pillar**, we walk through a sunrise service, balancing ritual with restless questions. The cadence is casual but reverent, with scripture riffs, coffee steam, and the quiet relief of doubt welcomed at the door.
 
