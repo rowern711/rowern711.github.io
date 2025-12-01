@@ -161,7 +161,7 @@ article.post {
   padding: 2rem;
   border: 2px solid var(--ink);
   box-shadow: 6px 6px 0 var(--ink);
-  margin: 1rem 0 2rem;
+  /* margin: 1rem 0 2rem; */
 }
 
 .post-header {
