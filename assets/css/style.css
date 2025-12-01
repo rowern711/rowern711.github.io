@@ -158,7 +158,7 @@ a:hover {
 
 article.post {
   background: var(--paper);
-  padding: 2rem;
+  padding: 0.5rem 2rem;
   border: 2px solid var(--ink);
   box-shadow: 6px 6px 0 var(--ink);
   /* margin: 1rem 0 2rem; */
