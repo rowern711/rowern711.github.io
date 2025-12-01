@@ -1,6 +1,6 @@
 ---
-title: A Rationale Belief: The Fine-Tuning Argument,
-pillars: Theology
+title: "A Rationale Belief: The Fine-Tuning Argument"
+pillar: Theology
 ---
 
 If you ran reality like a randomizer—spinning dials for the laws of physics, the strengths of the forces, and the starting conditions of the universe—you would almost never land on a universe that can host stars, chemistry, and certainly not people. Yet here we are.
